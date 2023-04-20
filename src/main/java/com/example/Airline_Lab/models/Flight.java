@@ -3,6 +3,7 @@ package com.example.Airline_Lab.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -19,10 +20,10 @@ public class Flight {
     @Column
     private int capacity;
 
-    @Column
-    private Date departureDate;
+    @Column(name = "departure_date")
+    private LocalDate departureDate;
 
-    @Column
+    @Column(name = "departure_time")
     private double departureTime;
 
     @JsonIgnoreProperties({"flights"})
@@ -31,7 +32,7 @@ public class Flight {
 
     public Flight(String destination,
                   int capacity,
-                  Date departureDate,
+                  LocalDate departureDate,
                   double departureTime) {
         this.destination = destination;
         this.capacity = capacity;
@@ -65,11 +66,11 @@ public class Flight {
         this.capacity = capacity;
     }
 
-    public Date getDepartureDate() {
+    public LocalDate getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(Date departureDate) {
+    public void setDepartureDate(LocalDate departureDate) {
         this.departureDate = departureDate;
     }
 
