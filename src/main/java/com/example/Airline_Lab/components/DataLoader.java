@@ -56,7 +56,6 @@ public class DataLoader implements ApplicationRunner {
                 05.45);
 
         Passenger fayeWong = new Passenger("Faye Wong", "CaliforniaDreamin@aol.com");
-
     }
 }
 
